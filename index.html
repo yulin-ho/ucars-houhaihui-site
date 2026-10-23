@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282828">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="UCARS 与后海汇汽车生活服务共创方案：停车场用户服务、企业用车、汽车生活活动与组合福利的分阶段试点展示。">
+  <title>UCARS × 后海汇｜汽车生活服务共创方案</title>
+  <style>
+    :root{--navy:#111c31;--navy2:#20334c;--orange:#f36b2a;--cream:#f6f3ed;--ink:#182235;--muted:#6d7684;--line:#dfe4ea;--blue:#dceef5;--green:#dbeee5;--white:#fff;--max:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}
+    .topbar{position:fixed;z-index:40;inset:0 0 auto;background:rgba(17,28,49,.96);color:#fff;backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
+    .topbar-inner{max-width:1440px;margin:auto;min-height:68px;padding:0 34px;display:flex;align-items:center;gap:26px}
+    .brand{font-size:16px;font-weight:800;letter-spacing:.1em;white-space:nowrap}.brand em{font-style:normal;color:var(--orange);margin:0 8px}
+    .nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+    .nav a{white-space:nowrap;color:#cbd2db;font-size:12px;padding:10px 11px;border-radius:8px;transition:.2s}.nav a:hover,.nav a.active{background:#34425a;color:white}
+    .tools{display:flex;gap:8px}.tool{border:1px solid #526077;background:transparent;color:white;padding:7px 10px;border-radius:8px;font-size:12px;white-space:nowrap}.tool:hover{border-color:white}
+    .progress{height:3px;background:var(--orange);width:0%;transition:width .2s}
+    .slide{min-height:100vh;padding:105px 44px 58px;display:flex;align-items:center;position:relative;overflow:hidden;scroll-margin-top:0}
+    .slide-inner{width:100%;max-width:var(--max);margin:auto}.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800;color:var(--orange);margin-bottom:20px}.eyebrow:before{content:"";width:26px;height:3px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(52px,6.4vw,98px);letter-spacing:-.065em;line-height:1.08;margin-bottom:24px}h2{font-size:clamp(36px,4.2vw,64px);line-height:1.14;letter-spacing:-.055em;margin-bottom:18px}h3{font-size:20px;margin-bottom:12px}.lead{font-size:clamp(17px,1.7vw,23px);line-height:1.7;max-width:760px;color:#586375}.section-head{margin-bottom:40px}.kicker{display:inline-flex;align-items:center;padding:7px 11px;border-radius:99px;font-size:12px;font-weight:700;background:#e5e9ed;color:#58667a}.kicker.orange{background:#fce7dc;color:#bb4d1e}.kicker.green{background:#ddf0e5;color:#287356}
+    .dark{background:var(--navy);color:white}.dark .lead{color:#c2ccd9}.dark .kicker{background:#2b3c54;color:#dce7f1}.white{background:#fff}.sand{background:#f6f3ed}.pale{background:#eef4f6}
+    .slide-no{position:absolute;right:44px;bottom:22px;color:#a1a9b5;font-size:12px;letter-spacing:.18em}.dark .slide-no{color:#738196}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.hero-grid h1 span{display:block;color:var(--orange)}.hero-copy{font-size:19px;line-height:1.75;color:#c8d1de;max-width:630px;margin-bottom:36px}
+    .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.primary-btn{background:var(--orange);border:0;border-radius:12px;padding:15px 22px;color:white;font-weight:800;box-shadow:0 8px 28px #f36b2a30}.ghost-btn{border:1px solid #6b7789;background:transparent;color:#fff;border-radius:12px;padding:14px 20px;font-weight:700}
+    .meta{display:flex;gap:15px;align-items:center;margin-top:45px;color:#9caabe;font-size:12px}.meta i{display:block;width:4px;height:4px;background:#6f8093;border-radius:50%}
+    .hero-art{position:relative;min-height:520px;display:grid;place-items:center}.hero-art:before{content:"";position:absolute;width:520px;height:520px;border:1px solid #43536c;border-radius:50%;box-shadow:0 0 0 70px #ffffff05,0 0 0 140px #ffffff04}.orbit-label{position:absolute;top:35px;right:30px;color:#97a7bb;font-size:11px;letter-spacing:.2em}
+    .parking{position:relative;width:min(100%,500px);aspect-ratio:1.16;background:linear-gradient(135deg,#2d4562,#1a2b43);border:1px solid #61748e;border-radius:26px;transform:rotate(-7deg);box-shadow:0 35px 90px #0007;overflow:hidden;padding:29px}.parking:after{content:"";position:absolute;left:46%;top:-10%;width:30%;height:120%;background:linear-gradient(90deg,transparent,#f6bd8744,transparent);transform:rotate(25deg)}
+    .parking-top{display:flex;justify-content:space-between;align-items:center;color:#c8d6e4;font-size:11px;letter-spacing:.12em}.parking-top strong{color:#fff;font-size:16px}.parking-lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}.bay{height:94px;border:2px solid #97a9bc70;border-bottom:0;display:grid;place-items:center;position:relative}.bay:after{content:"P";position:absolute;bottom:7px;right:8px;color:#94a8bf;font-size:12px}.car{width:72%;height:43px;border-radius:16px 16px 11px 11px;background:#e8ecee;box-shadow:0 6px 0 #aebcca,0 13px 15px #0005;position:relative}.car:before{content:"";position:absolute;inset:8px 14px 13px;background:#718ba4;border-radius:8px}.bay.hot{border-color:var(--orange)}.bay.hot .car{background:var(--orange);box-shadow:0 6px 0 #a34417,0 13px 15px #0005}
+    .art-sticker{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:15px 19px;box-shadow:0 18px 40px #0005;transform:rotate(7deg)}.art-sticker strong{font-size:29px;display:block}.art-sticker span{font-size:12px;color:#637084}.sticker-one{right:-24px;top:75px}.sticker-two{left:-32px;bottom:50px}.sticker-two strong{color:var(--orange)}
+    .summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}.summary-item{border-top:3px solid var(--orange);padding:21px 22px;background:#fff;border-radius:0 0 14px 14px;box-shadow:0 7px 24px #1c2c4610}.summary-item .num{font-size:11px;color:var(--orange);font-weight:800;letter-spacing:.18em}.summary-item h3{font-size:22px;margin:13px 0 8px}.summary-item p{color:#687483;font-size:14px;line-height:1.65;margin:0}
+    .strategy-map{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:38px}.strategy-card{border:1px solid #d9e0e6;background:white;border-radius:22px;padding:27px;min-height:238px;box-shadow:0 12px 34px #1531470b}.strategy-card .icon{width:52px;height:52px;border-radius:16px;background:#fce7dc;color:#d9571f;display:grid;place-items:center;font-size:26px;margin-bottom:24px}.strategy-card:nth-of-type(3) .icon{background:#e5eff3;color:#37627e}.strategy-card:nth-of-type(5) .icon{background:#e5f0e8;color:#35765a}.strategy-card p{line-height:1.6;color:#687483;font-size:14px}.strategy-arrow{align-self:center;color:var(--orange);font-size:28px}.strategy-caption{margin-top:30px;padding:18px 24px;background:var(--navy);color:#d9e2ed;border-radius:13px;display:flex;justify-content:space-between;gap:25px;align-items:center;font-size:14px}.strategy-caption strong{color:white}
+    .product-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}.product-intro{background:var(--navy);color:white;padding:36px;border-radius:24px;position:relative;overflow:hidden}.product-intro:after{content:"01";position:absolute;right:-10px;bottom:-80px;font-size:230px;font-weight:900;color:#ffffff09}.product-intro .eyebrow{margin-bottom:30px}.product-intro h2{font-size:clamp(34px,4vw,57px)}.product-intro p{color:#c7d1dd;line-height:1.7}.big-benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px;position:relative;z-index:1}.benefit{background:#2a3c55;border:1px solid #44566e;border-radius:15px;padding:16px}.benefit strong{display:block;font-size:28px;color:white}.benefit span{font-size:12px;color:#bfccd8}
+    .journey{background:#fff;border-radius:24px;padding:30px;border:1px solid #e2e8ec;box-shadow:0 12px 30px #1730440a}.journey-title{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--orange);margin-bottom:24px}.journey-step{display:flex;gap:17px;position:relative;padding-bottom:20px}.journey-step:not(:last-child):before{content:"";position:absolute;left:17px;top:37px;bottom:0;width:1px;background:#d9e1e8}.step-circle{flex:none;width:35px;height:35px;border-radius:50%;background:#fce4d9;color:#bf4c19;display:grid;place-items:center;font-weight:800;font-size:13px}.journey-step strong{display:block;margin:4px 0 4px;font-size:15px}.journey-step p{font-size:13px;color:#6c7682;line-height:1.5;margin:0}.bottom-callout{display:flex;align-items:center;gap:18px;background:#fff7f1;border:1px solid #f5d1bd;padding:16px 21px;border-radius:15px;margin-top:22px;font-size:14px;line-height:1.5}.bottom-callout b{white-space:nowrap;color:#c4501c}
+    .enterprise-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px}.time-panel{background:#fff;border-radius:26px;padding:37px;border:1px solid #dce5e8}.time-big{font-size:clamp(52px,6vw,88px);line-height:1;font-weight:800;letter-spacing:-.06em;color:var(--navy);margin:27px 0}.time-big small{display:block;font-size:14px;letter-spacing:0;color:#778493;font-weight:600;margin-top:10px}.time-track{display:flex;align-items:center;margin:30px 0 24px;gap:8px}.time-track .line{height:6px;flex:1;background:#dce8ec;border-radius:8px}.time-track .line.on{background:var(--orange)}.time-track .dot{width:12px;height:12px;background:var(--orange);border-radius:50%}.time-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.time-steps div{background:#f2f6f7;padding:14px 12px;border-radius:12px;font-size:13px;line-height:1.5}.time-steps b{display:block;color:var(--orange);font-size:11px;margin-bottom:8px}
+    .enterprise-side{display:flex;flex-direction:column;gap:14px}.blue-card{background:#dceef5;border-radius:24px;padding:31px;flex:1}.blue-card p{line-height:1.7;color:#4e6776}.line-card{background:#fff;border:1px solid #dce4e8;border-radius:18px;padding:21px 25px}.line-card h3{font-size:16px;margin-bottom:7px}.line-card p{font-size:13px;color:#697888;line-height:1.6;margin:0}
+    .ecosystem{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}.eco-card{background:#fff;border:1px solid #dee4e8;border-radius:23px;padding:29px;min-height:320px;display:flex;flex-direction:column}.eco-card .index{font-size:12px;letter-spacing:.18em;font-weight:800;color:var(--orange)}.eco-card h3{font-size:25px;margin:20px 0 11px}.eco-card p{color:#687583;line-height:1.65;font-size:14px}.eco-visual{margin-top:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{background:#edf1f3;border-radius:99px;padding:9px 12px;font-size:12px;font-weight:700}.pill.highlight{background:#fce7dc;color:#b64b1b}.eco-arrow{color:var(--orange);font-size:18px}.note-box{margin-top:19px;border-left:4px solid var(--orange);padding:14px 20px;background:#fcf0e9;color:#775442;border-radius:0 12px 12px 0;font-size:13px;line-height:1.6}
+    .final-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}.timeline{background:#fff;color:var(--ink);border-radius:24px;padding:28px 32px}.phase{display:grid;grid-template-columns:64px 1fr;gap:16px;position:relative;padding-bottom:19px}.phase:not(:last-child):before{content:"";position:absolute;left:25px;top:47px;bottom:0;width:2px;background:#d7e0e8}.phase-number{width:50px;height:50px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--orange);background:#fff;color:var(--orange);font-weight:800;z-index:1}.phase h3{font-size:16px;margin:3px 0 6px}.phase p{font-size:13px;color:#6c7886;line-height:1.5;margin:0}.decision-list{display:flex;flex-direction:column;gap:12px}.decision{padding:21px 24px;border:1px solid #54647a;border-radius:18px;background:#ffffff09}.decision .letter{font-size:12px;color:#ffa572;font-weight:800;letter-spacing:.14em}.decision h3{margin:8px 0;font-size:17px}.decision p{color:#bfccd9;font-size:13px;line-height:1.55;margin:0}.closing{font-size:13px;color:#8fa0b5;margin-top:22px}.footer{padding:16px 44px 24px;background:#eef1f2;color:#8c97a4;font-size:11px}
+    .appendix-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;color:#fff;border-bottom:1px solid var(--orange);padding-bottom:6px;font-size:14px;font-weight:800}
+    .appendix{padding:105px 44px 80px;background:#eef1f2;scroll-margin-top:60px}.appendix-inner{max-width:var(--max);margin:auto}.appendix-head{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end;margin-bottom:22px}.appendix-head h2{margin-bottom:8px}.appendix-head p{max-width:750px;color:#65717e;line-height:1.7}.appendix-count{font-size:75px;font-weight:900;color:#d7dee2;line-height:1;letter-spacing:-.08em}.appendix-note{background:#fff8f3;border-left:4px solid var(--orange);padding:17px 21px;border-radius:0 12px 12px 0;margin-bottom:25px;font-size:14px;line-height:1.65;color:#764a34}
+    .appendix details{background:#fff;border:1px solid #dce2e6;border-radius:18px;margin:13px 0;overflow:hidden;box-shadow:0 8px 24px #15314708}.appendix details[open]{border-color:#c8d3da}.appendix summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:16px;padding:22px 25px}.appendix summary::-webkit-details-marker{display:none}.appendix summary .code{font-size:12px;font-weight:900;color:var(--orange);letter-spacing:.12em;width:25px;flex:none}.appendix summary strong{font-size:19px;flex:1}.appendix summary small{color:#788492;font-size:12px}.appendix summary:after{content:"＋";font-size:24px;color:var(--orange);margin-left:auto}.appendix details[open] summary:after{content:"−"}.appendix-body{padding:0 25px 26px}.appendix-body>p{color:#667382;line-height:1.65;font-size:13px}.appendix-table-wrap{overflow-x:auto;border:1px solid #dfe5e8;border-radius:12px}.appendix-table{border-collapse:collapse;min-width:750px;width:100%;background:#fff}.appendix-table th{background:var(--navy);color:#fff;text-align:left;font-size:12px;padding:12px 13px;font-weight:700}.appendix-table td{border-top:1px solid #e8edf0;padding:12px 13px;vertical-align:top;font-size:13px;line-height:1.55;color:#4c5a69}.appendix-table td:first-child{font-weight:800;color:var(--ink);white-space:nowrap}.appendix-table tr:nth-child(even) td{background:#f8fafb}.appendix-table td b{color:var(--ink)}.appendix-foot{margin-top:24px;color:#84909a;font-size:12px;line-height:1.65}
+    @media(max-width:1050px){.nav{display:none}.topbar-inner{padding:0 20px}.hero-grid,.product-layout,.enterprise-grid,.final-grid{grid-template-columns:1fr}.hero-art{min-height:420px}.slide{height:auto;min-height:100vh;padding:100px 26px 55px}.parking{max-width:420px}.strategy-map{grid-template-columns:repeat(3,1fr)}.strategy-arrow{display:none}.strategy-card{min-height:250px}.appendix{padding:95px 26px 65px}}
+    @media(max-width:700px){.tools .tool:first-child{display:none}.slide{padding:90px 18px 50px}.hero-art{min-height:320px}.parking{max-width:300px;padding:18px}.parking-lanes{margin-top:22px;gap:8px}.bay{height:62px}.car{height:27px}.art-sticker{padding:10px 12px}.art-sticker strong{font-size:20px}.sticker-one{right:0;top:28px}.sticker-two{left:0;bottom:20px}.summary-strip,.strategy-map,.ecosystem{grid-template-columns:1fr}.strategy-card{min-height:0}.strategy-caption{display:block}.time-steps{grid-template-columns:repeat(2,1fr)}.product-intro,.journey,.time-panel,.blue-card,.eco-card{padding:24px}.footer{padding:0 18px 14px}.slide-no{right:18px}.appendix{padding:84px 18px 55px}.appendix-head{grid-template-columns:1fr}.appendix-count{display:none}.appendix summary{padding:17px}.appendix summary strong{font-size:16px}.appendix summary small{display:none}.appendix-body{padding:0 17px 20px}}
+    @media print{.topbar,.footer,.hero-actions,.slide-no,.appendix-cta{display:none!important}.slide{min-height:0;page-break-after:always;padding:25mm 18mm}.dark{print-color-adjust:exact;-webkit-print-color-adjust:exact}h1{font-size:56px}h2{font-size:38px}.appendix{padding:18mm}.appendix details{break-inside:avoid}.appendix-table{min-width:0}}
+  </style>
+  <link rel="stylesheet" href="brand.css?v=20261023-3">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#overview" aria-label="UCARS 与后海汇合作方案首页"><img src="ucars-logo-official.png" alt="UCARS"><span class="brand-cross">×</span><span class="partner-name">后海汇</span></a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#overview">总览</a><a href="#strategy">合作内容</a><a href="#personal">个人客户</a><a href="#enterprise">企业客户</a><a href="#ecosystem">活动与福利</a><a href="#delivery">合作安排</a><a href="#appendix">服务细节</a>
+      </nav>
+      <div class="tools"><button class="tool" id="present" type="button">演示模式</button><details class="print-menu"><summary class="tool">打印 / PDF</summary><div class="print-menu-panel"><button type="button" data-print="main" aria-label="打印六页正文">打印六页正文</button><button type="button" data-print="full" aria-label="打印正文和附录">打印正文＋附录</button><div class="print-menu-divider"></div><a href="UCARS-后海汇合作方案-正文.pdf" download>下载正文 PDF</a><a href="UCARS-后海汇合作方案-含附录.pdf" download>下载含附录 PDF</a></div></details></div>
+    </div>
+    <div class="progress" id="progress"></div>
+  </header>
+
+  <main>
+    <section class="slide dark" id="overview">
+      <div class="slide-inner overview-inner">
+        <div class="eyebrow">UCARS × 后海汇 · 合作方案</div>
+        <h1>从停车出发<br><span>共创汽车生活</span></h1>
+        <p class="hero-copy">从个人客户的停车场景和入驻企业的车辆需求出发，分阶段试点汽车服务，再联动汽车生活活动和商家福利。</p>
+        <div class="hero-summary" aria-label="合作范围与首轮试点">
+          <div><small>整体合作范围</small><strong>个人与企业多类用车场景</strong><span>覆盖白天、地下、雨季、通勤、夜间、周末及不同企业车辆</span></div>
+          <div><small>首轮试点建议</small><strong>先验证可落地的服务</strong><span>周末洗车与企业晨间擦车；活动和商家福利小范围验证</span></div>
+        </div>
+        <p class="hero-caveat">首轮试点不等于全部服务范围；具体权益、服务能力与实施条件由双方确认。</p>
+        <div class="hero-actions"><a class="primary-btn" href="#strategy">查看合作内容</a><a class="ghost-btn" href="#delivery">查看合作安排</a></div>
+        <div class="meta"><span>汽车生活服务共创方案</span><i></i><span>2026.10.23</span></div>
+      </div>
+      <div class="slide-no">01 / 06</div>
+    </section>
+
+    <section class="slide sand" id="strategy">
+      <div class="slide-inner">
+        <div class="section-head"><div class="eyebrow">01 · 合作内容</div><h2>三条合作线：整体规划，分阶段落地</h2><p class="lead">汽车服务覆盖多类个人与企业场景；活动让更多人认识服务；组合福利连接商家消费与后续使用。首轮先选择条件成熟的项目验证。</p></div>
+        <div class="strategy-hub">UCARS × 后海汇 共创</div>
+        <div class="strategy-map" aria-label="三类并行合作">
+          <article class="strategy-card"><div class="icon">P</div><h3>停车场汽车服务</h3><div class="card-stage"><b>首轮重点</b><p>试点周末预约洗车与按需授权挪车；与入驻企业验证晨间擦车。</p></div><div class="card-later"><b>完整场景</b><p>后续可延展至白天停车、雨季、夜间消费，以及不同类型企业车辆；按需求和现场条件逐项推进。</p></div></article>
+          <article class="strategy-card"><div class="icon">◇</div><h3>汽车生活活动</h3><div class="card-stage"><b>首轮验证</b><p>以停车场用户增值服务为入口，试办一场小型汽车生活主题活动。</p></div><div class="card-later"><b>后续可扩展</b><p>结合后海汇活动档期，商定定期活动或汽车文化主题内容。</p></div></article>
+          <article class="strategy-card"><div class="icon">＋</div><h3>组合福利产品</h3><div class="card-stage"><b>首轮验证</b><p>与少量入驻商家试一款“停车＋商家消费＋汽车服务”福利。</p></div><div class="card-later"><b>后续可扩展</b><p>视核销效果讨论会员权益、企业福利和联合礼赠。</p></div></article>
+        </div>
+        <p class="strategy-caption"><strong>推进原则</strong><span>先确认停车与作业条件，再上线服务；活动和福利同期筹备，在条件具备时小范围验证。</span></p>
+      </div>
+      <div class="slide-no">02 / 06</div>
+    </section>
+
+    <section class="slide pale" id="personal">
+      <div class="slide-inner">
+        <div class="section-head"><div class="eyebrow">02 · 个人客户服务</div><h2>个人客户：不同停车场景，不同用车需求</h2><p class="lead">从工作日停车到周末消费，先识别车主需求，再选择适合的服务。以下为拟议方向，首轮重点验证周末洗车服务。</p></div>
+        <div class="scenario-grid personal-scenes" aria-label="个人客户的六类场景">
+          <article><b>白天停车</b><span>上班没空洗车</span><small>预约洗车、授权取送车</small></article>
+          <article><b>地下车库</b><span>内饰积灰、潮湿或异味</span><small>内饰清洁与养护</small></article>
+          <article><b>雨季与回南天</b><span>油膜、水渍影响用车</span><small>雨后清洁、玻璃养护</small></article>
+          <article><b>短途通勤</b><span>担心电瓶、胎压等车况</span><small>基础车况检查</small></article>
+          <article><b>夜间消费</b><span>消费与取车时间较晚</span><small>评估夜间预约窗口</small></article>
+          <article class="featured"><b>周末停车</b><span>希望洗车顺路完成</span><small>首轮：洗车、按需挪车与回场权益</small></article>
+        </div>
+        <div class="pilot-heading"><span class="card-label">首轮试点建议</span><h3>周末车主服务：完成洗车后领取拟议权益</h3><p>周末停车是先验证的一个入口，不代表个人客户服务只覆盖周末。</p></div>
+        <div class="personal-grid">
+          <div class="route" aria-label="车主使用流程">
+            <div class="route-step"><span class="route-number">1</span><div><h3>进场了解服务</h3><p>车主通过停车场广告位、导视或二维码查看服务内容与预约方式。</p><small>需物业支持：场内可用广告位及展示规则</small></div></div>
+            <div class="route-step"><span class="route-number">2</span><div><h3>预约洗车；挪车按需授权</h3><p>车主选择服务与时段。如需挪车，再确认车辆交接与授权方式。</p><small>需双方确认：作业区域、场内通行及车辆交接规则</small></div></div>
+            <div class="route-step"><span class="route-number">3</span><div><h3>完成洗车，领取停车权益</h3><p>拟为符合条件的周末洗车订单增加单次 1 小时停车减免。</p><small>需物业支持：减免额度；发放和核销方式待双方确认</small></div></div>
+            <div class="route-step"><span class="route-number">4</span><div><h3>回场使用一次外观冲洗</h3><p>周末洗车后，拟在下一周周三（含当日）前可预约回场使用 1 次外观冲洗。</p><small>需双方确认：开放时段、清洁范围与预约规则</small></div></div>
+          </div>
+          <aside class="scope-stack">
+            <div class="scope-card dark-card"><span class="card-label">首轮拟议权益</span><h3>一次洗车，串起两次到场</h3><ul><li>周末预约洗车，可按需要申请授权挪车</li><li>洗车订单完成后，拟增加单次 1 小时停车减免</li><li>下一周周三（含当日）前，拟可回场使用 1 次外观冲洗</li></ul></div>
+            <div class="scope-card"><span class="card-label">适用边界</span><p>额外停车时长与符合条件的周末洗车订单关联，不表示所有周末进场车辆均可领取。挪车为可选服务，须取得车主授权。</p></div>
+            <div class="scope-card pending"><span class="card-label">启动前确认</span><p>洗车服务范围、减免额度及核销方式、挪车交接规则、外观冲洗可预约时段与现场容量。</p></div>
+          </aside>
+        </div>
+      </div>
+      <div class="slide-no">03 / 06</div>
+    </section>
+
+    <section class="slide white" id="enterprise">
+      <div class="slide-inner">
+        <div class="section-head"><div class="eyebrow">03 · 企业客户服务</div><h2>企业客户：按车辆用途配置服务</h2><p class="lead">行政接待、高管专车、业务车队和楼宇自用车的需求各不相同。以下为可探讨的服务方向；晨间擦车可先作为轻量试点。</p></div>
+        <div class="scenario-grid enterprise-scenes" aria-label="企业客户的六类车辆场景">
+          <article><b>行政接待车</b><span>临时接待，重视车辆形象</span><small>外观整理与预约优先</small></article>
+          <article><b>高管专车</b><span>重视车内体验与养护一致性</span><small>定期养护计划</small></article>
+          <article><b>业务 / 销售车队</b><span>多车分散，需统一管理</span><small>标准服务与台账结算</small></article>
+          <article><b>班车 / 通勤车</b><span>固定时段运营</span><small>评估错峰或周末养护</small></article>
+          <article><b>跨境商务车</b><span>集中用车，重视交接效率</span><small>预约专场与交接记录</small></article>
+          <article><b>物业 / 礼宾用车</b><span>楼宇自用车辆需要保持形象</span><small>定期清洁与车辆管理</small></article>
+        </div>
+        <div class="pilot-heading"><span class="card-label">首轮试点建议</span><h3>晨间擦车：拟议每天 9:00—10:30 预约使用</h3><p>适用企业、车辆范围与每天可预约的“一次”额度，均须在试点前确定。</p></div>
+        <div class="enterprise-layout">
+          <div class="enterprise-process"><div class="time-ribbon"><span>拟议服务时段</span><strong>09:00—10:30</strong><small>每日 · 预约使用</small></div>
+            <div class="simple-steps" aria-label="企业服务流程">
+              <div><b>1</b><p><strong>企业预约</strong><span>企业指定对接人，提交车辆与使用需求。</span></p></div>
+              <div><b>2</b><p><strong>车辆停入指定区域</strong><span>车主或司机自行停放；是否需要移车另行确认。</span></p></div>
+              <div><b>3</b><p><strong>专人完成外观擦车</strong><span>UCARS 在约定时段按预约顺序作业。</span></p></div>
+              <div><b>4</b><p><strong>完成通知</strong><span>向企业对接人或车主反馈服务完成情况。</span></p></div>
+            </div>
+          </div>
+          <div class="enterprise-side">
+            <div class="scope-card"><span class="card-label">服务范围</span><h3>停车期间完成基础外观清洁</h3><p>首轮聚焦外观擦车。具体清洁部位、工具材料与车辆适用范围，应按场地条件和实际服务能力确定。</p></div>
+            <div class="scope-card pending"><span class="card-label">必须明确的服务额度</span><p>“一次”按每车、每企业，还是时段总名额计算？每日预约上限、预约截止时间和满额处理方式，均需在试点前确定。</p></div>
+            <div class="scope-card"><span class="card-label">合作配套</span><p>企业触达渠道、指定停车与作业区域、现场用水用电条件，以及双方对接方式。</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-no">04 / 06</div>
+    </section>
+
+    <section class="slide sand" id="ecosystem">
+      <div class="slide-inner">
+        <div class="section-head"><div class="eyebrow">04 · 活动与联合福利</div><h2>让服务带来持续到访</h2><p class="lead">日常汽车服务满足使用需求，汽车生活活动带来新的参与者，联合福利连接商家与下一次到店。</p></div>
+        <div class="ecosystem-roles" aria-label="三类合作的作用"><div><b>常设汽车服务</b><span>承接日常用车需求</span></div><div><b>主题活动</b><span>让更多用户参与</span></div><div><b>组合福利</b><span>连接商家与再次使用</span></div></div>
+        <div class="ecosystem-examples">
+          <article class="pilot-example"><span class="card-label">首轮活动示例</span><h3>小型车主开放日</h3><p>以停车场用户增值服务为入口，设置汽车养护咨询与轻体验，结合后海汇活动档期和场地条件试办一场；之后再讨论固定频次。</p><div class="example-path">场内触达 <i>→</i> 报名参与 <i>→</i> 了解后续服务</div></article>
+          <article class="pilot-example"><span class="card-label">首轮福利示例</span><h3>停车 × 商家 × 汽车服务</h3><p>选择少量入驻商家，设计一款条件清晰、容易核销的组合福利。领取门槛、权益内容、成本与结算方式由参与方共同商定。</p><div class="example-path">符合约定条件 <i>→</i> 领取权益 <i>→</i> 使用与核销</div></article>
+        </div>
+        <div class="note-box"><strong>传播主题建议：</strong>“联想中心停车场用户增值服务”。场地正式名称、物业归属、联合署名及使用范围确认后，再用于正式宣发。</div>
+      </div>
+      <div class="slide-no">05 / 06</div>
+    </section>
+
+    <section class="slide dark" id="delivery">
+      <div class="slide-inner">
+        <div class="section-head"><div class="eyebrow">05 · 合作推进</div><h2>启动前，先确认三项合作支持</h2><p class="lead">停车权益与作业规则、场内宣发资源、企业和商家对接方式明确后，再安排首轮试点。以下均为合作建议，需双方确认。</p></div>
+        <div class="responsibility-grid">
+          <article><span class="card-label">后海汇 / 物业 · 启动前确认</span><h3>① 免停额度与作业权限</h3><ul><li>额外 1 小时免停由谁承担，按车牌还是按券发放，如何对账结算</li><li>确认场内可挪车及作业区域、车辆交接与授权留痕规则</li><li>UCARS 据此制定预约、履约和异常处理流程</li></ul></article>
+          <article><span class="card-label">后海汇 / 物业 · 启动前确认</span><h3>② 停车场广告位与宣发</h3><ul><li>确认广告位置、数量、展示时长及内容审批流程</li><li>建议先评估道闸 1 处、B1 柱面 2 处，并提供场内活动触达资源</li><li>以“联想中心停车场用户增值服务”为拟议主题，正式名称与联合署名待确认</li></ul></article>
+          <article><span class="card-label">后海汇 / 招商 · 首轮对接</span><h3>③ 企业与商家对接</h3><ul><li>提供入驻企业引荐渠道及每家企业的指定对接人</li><li>建议先对接 2–3 家商家，明确组合福利与核销结算配合</li><li>拟在 11 月中旬前确定首批试点对象；具体节点由双方商定</li></ul></article>
+        </div>
+        <div class="delivery-stages" aria-label="分阶段推进"><div><b>准备</b><span>确认资源与规则</span></div><div><b>试点</b><span>上线服务，小范围验证活动与福利</span></div><div><b>复盘</b><span>评估使用、体验与成本</span></div><div><b>扩展</b><span>商定固定频次和更多产品</span></div></div>
+        <div class="delivery-foot"><p>UCARS 负责服务设计、人员安排、车辆交接与履约记录；产品、权益、费用及试点规则以双方最终确认的内容为准。</p><a class="appendix-cta" href="#appendix">查看服务与产品细节 <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="slide-no">06 / 06</div>
+    </section>
+
+    <section class="appendix" id="appendix" aria-labelledby="appendix-title">
+      <div class="appendix-inner">
+        <div class="eyebrow">服务内容 · 按需查看</div>
+        <div class="appendix-head">
+          <div><h2 id="appendix-title">服务与产品细节</h2><p>以下是可逐步探讨的服务方向、企业产品和运营安排。具体内容将在试点启动前由双方共同确认。</p></div>
+          <div class="appendix-count" aria-hidden="true">A—G</div>
+        </div>
+        <div class="appendix-note"><strong>阅读说明：</strong>下列内容是可探讨的服务与产品方向。首轮建议见正文；适用范围、服务能力、价格及实施规则，以双方最终确认的内容为准。</div>
+
+        <details>
+          <summary><span class="code">A</span><strong>停车场汽车服务｜产品方向</strong><small>7 项服务 · 分阶段推进</small></summary>
+          <div class="appendix-body">
+            <p>首轮可从周末洗车、授权挪车和停车权益入手；其他服务根据用户需求与现场条件逐项引入。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>编号 / 服务</th><th>服务内容</th><th>实施条件</th></tr></thead>
+              <tbody>
+                <tr><td>A1 原位取送车</td><td>绑定车位与钥匙交接信息，专员取车、到店施工后停回。</td><td>场内通行、钥匙交接、车辆影像、保险和门店排班。</td></tr>
+                <tr><td>A2 停车时长联动</td><td>施工赠停车时长、停车消费触发服务券；符合条件的周末洗车订单拟增加单次 1 小时停车减免。</td><td>物业额度、适用车辆、发放方式和双方结算。</td></tr>
+                <tr><td>A3 车况体检</td><td>施工附电瓶、胎压、雨刮、玻璃水等检查，输出车况提示。</td><td>检查项目、免费范围、报告口径及人员工时。</td></tr>
+                <tr><td>A4 换季专项包</td><td>雨季、回南天、夏季和年末等主题养护组合。</td><td>产品组合、价格、适用季节与到店履约能力。</td></tr>
+                <tr><td>A5 贴膜 / 轻改到企</td><td>入企咨询、估价与接送施工，承接车衣、改色膜等项目。</td><td>可服务区域、承接门店、报价和上门服务边界。</td></tr>
+                <tr><td>A6 企业用车管家</td><td>企业联络、车辆台账、集中结算与优先工位。</td><td>企业采购流程、合同主体、门店适用范围及对账能力。</td></tr>
+                <tr><td>A7 接待应急</td><td>面向临时接待需求，探索车辆外观整理与优先服务。</td><td>服务时效、适用时段、项目范围和超时处理需共同确定。</td></tr>
+              </tbody>
+            </table></div>
+            <h3 class="appendix-subtitle">个人客户的其他用车场景</h3>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>场景</th><th>车主需求</th><th>可探讨的服务</th></tr></thead>
+              <tbody>
+                <tr><td>工作日停车</td><td>上班时车辆长时间停放，车主没有空专程洗车。</td><td>预约洗车、授权取送车，服务完成后停回约定位置。</td></tr>
+                <tr><td>地下车库停车</td><td>车内异味、内饰积灰或皮革养护需求。</td><td>到店内饰清洁与养护，结合停车场预约取送车。</td></tr>
+                <tr><td>雨季与潮湿天气</td><td>玻璃油膜、水渍和雨后清洁影响使用体验。</td><td>去油膜、玻璃养护、雨后清洁等换季服务。</td></tr>
+                <tr><td>日常通勤</td><td>担心胎压、电瓶、雨刮等日常用车问题。</td><td>施工时附带基础车况检查，并提示需要关注的项目。</td></tr>
+                <tr><td>夜间消费</td><td>夜间停车、取车与车辆清洁的时间不匹配。</td><td>评估夜间预约窗口和商家联动服务，具体以场地与人员条件为准。</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">B</span><strong>企业用车服务包｜合作方向</strong><small>价格与权益另行商定</small></summary>
+          <div class="appendix-body">
+            <p>可围绕企业用车需求组合洗护、接送车、晨间擦车及车辆管理服务。服务额度和价格在了解需求后共同确定。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>项目</th><th>建议内容</th><th>需商定事项</th></tr></thead>
+              <tbody>
+                <tr><td>企业洗护次卡</td><td>按企业车辆使用量配置洗车次数，并可组合接送车服务。</td><td>次数、价格、使用期限和服务范围。</td></tr>
+                <tr><td>预付合同制</td><td>根据企业预算和车辆规模，配置洗美服务及取送车权益。</td><td>服务折扣、接送范围、付款和结算条款。</td></tr>
+                <tr><td>接待加急服务</td><td>为临时商务接待车辆预留优先服务方式。</td><td>可提供的响应时效、适用项目和服务次数。</td></tr>
+                <tr><td>晨间擦车</td><td>企业车辆停在指定区域，在拟议的每日 09:00—10:30 时段预约一次外观擦车。</td><td>“一次”的计算单位、每日名额、服务范围和费用。</td></tr>
+                <tr><td>车辆台账与结算</td><td>按企业需要记录服务使用情况，并提供对账信息。</td><td>车辆信息授权、出账方式和适用门店。</td></tr>
+              </tbody>
+            </table></div>
+            <h3 class="appendix-subtitle">不同企业车辆的服务重点</h3>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>车辆类型</th><th>主要需求</th><th>可探讨的服务安排</th></tr></thead>
+              <tbody>
+                <tr><td>行政接待车</td><td>临时接待时需要车辆保持整洁。</td><td>预约优先处理外观与车内基础整理，响应时效按排班确认。</td></tr>
+                <tr><td>高管专车</td><td>重视内饰、气味和长期养护的一致性。</td><td>建立定期养护计划，并指定企业服务对接人。</td></tr>
+                <tr><td>业务与销售车队</td><td>车辆多、使用频繁，需要统一服务和清晰对账。</td><td>统一服务标准、车辆台账与月度结算。</td></tr>
+                <tr><td>班车与通勤车</td><td>工作日运营时间固定，不宜占用车辆使用时段。</td><td>评估夜间或周末错峰养护。</td></tr>
+                <tr><td>跨境商务车</td><td>用车节奏集中，需要稳定的预约与交接方式。</td><td>提前预约专场、固定对接人和清晰交接记录。</td></tr>
+                <tr><td>物业与礼宾用车</td><td>楼宇自用车辆需要持续保持形象。</td><td>按物业车辆规模讨论定期清洁与统一管理。</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">C</span><strong>汽车生活与文化活动｜内容与节奏</strong><small>先试 1 场 · 再讨论固定频次</small></summary>
+          <div class="appendix-body">
+            <p>汽车文化活动可结合后海汇的商业活动和 IP 档期。首轮先试办一场小型车主活动，了解用户参与和服务使用情况，再共同确定后续频次。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>活动方向</th><th>可呈现的内容</th><th>适合场地与合作方</th><th>建议节奏 / 启动条件</th></tr></thead>
+              <tbody>
+                <tr><td>车主开放日</td><td>设置汽车服务咨询点，结合车况检查、去油膜及活动专属到店优惠，让车主现场了解和预约后续项目。</td><td>写字楼大堂或 B1 服务点位；物业、入驻企业可协助触达。</td><td>首轮先试 1 场；效果稳定后可讨论每月固定日。优惠幅度、工位和服务人数需确认。</td></tr>
+                <tr><td>CAR LIFE DAY 汽车生活节</td><td>车友聚会、改装车静态展示、轻养护快闪、汽车文化摄影和创作者内容征集。</td><td>户外街区、屋顶或地面车位区；可联动车友会和汽车品牌。</td><td>作为季度主题活动方向；需先确认场地、车辆展示、安全管理和活动审批。</td></tr>
+                <tr><td>原创 IP × 车主周边</td><td>结合后海汇原创 IP，探索限定车贴、车载香片、挪车卡等汽车生活周边。</td><td>商场中庭、快闪点位；UCARS 与后海汇 IP 团队共同策划。</td><td>结合合适的 IP 档期推进，卡面和周边设计以授权及打样结果为准。</td></tr>
+                <tr><td>夜间汽车生活场</td><td>联动夜间餐饮与消费场景，探索夜间车辆清洁、取车服务及商家权益。</td><td>停车场指定服务窗口；夜间营业商家与物业共同参与。</td><td>作为后续可选方向；先评估夜间作业、人员排班、车辆交接和安全条件。</td></tr>
+              </tbody>
+            </table></div>
+            <div class="appendix-flow" aria-label="汽车生活活动的用户路径"><span>停车场与商家触达</span><i>→</i><span>报名参与主题活动</span><i>→</i><span>体验或领取服务权益</span><i>→</i><span>回访与到店使用</span></div>
+            <p class="appendix-followup">传播可围绕“联想中心停车场用户增值服务”展开，具体场地名称、物业归属、联合署名和资源位由双方确认。每场活动共同回顾参与人数、新增会员及活动后服务权益的实际使用情况。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">D</span><strong>组合福利｜会员、商家与企业联动</strong><small>先选一款福利做小范围试点</small></summary>
+          <div class="appendix-body">
+            <p>组合福利可从容易理解和核销的产品开始，再逐步扩展至会员权益和企业服务包。每项权益的门槛、成本承担及结算方式由参与方共同确定。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>合作层次</th><th>权益设计方向</th><th>可能的合作对象</th><th>落地前需确认</th></tr></thead>
+              <tbody>
+                <tr><td>会员权益互通</td><td>UCARS 会员可获得停车或商家礼遇；后海汇会员可兑换指定汽车服务。</td><td>UCARS 会员体系、后海汇会员体系。</td><td>兑换项目、积分或等级规则、系统对接及核销结算。</td></tr>
+                <tr><td>消费触发券包</td><td>停车与商家消费达到约定条件后领取汽车服务券；使用汽车服务后，再获得商家回访权益。</td><td>餐饮、零售、健身等入驻商家。</td><td>触发门槛、券额、适用期限、出资方和对账方式。</td></tr>
+                <tr><td>楼宇企业服务包</td><td>把员工福利、高管用车和行政车队服务组合为企业可采购的产品。</td><td>入驻企业行政、HR 与采购团队。</td><td>服务清单、合同主体、采购路径、开票和服务额度。</td></tr>
+                <tr><td>联名礼赠</td><td>将停车、商家礼遇和汽车服务组合为活动奖品或企业礼品卡。</td><td>后海汇、入驻企业及联合商家。</td><td>卡面授权、发行与激活、核销、有效期和售后规则。</td></tr>
+              </tbody>
+            </table></div>
+            <div class="appendix-flow" aria-label="组合福利的使用路径"><span>停车或商家消费</span><i>→</i><span>领取汽车服务权益</span><i>→</i><span>完成服务核销</span><i>→</i><span>获得商家回访权益</span></div>
+            <p class="appendix-followup">首轮可先与少量商家验证一款券包。系统条件具备时可自动发券；试点初期也可使用兑换码验证流程。双方按实际核销记录复盘效果，再决定是否扩大。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">E</span><strong>联名礼品卡｜联合礼赠方向</strong><small>可在服务试点后探讨</small></summary>
+          <div class="appendix-body">
+            <p>联名礼品卡可用于会员回馈、活动奖品和企业礼赠。具体版本及发行安排可在服务试点后进一步商定。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>版本</th><th>使用场景</th><th>需商定事项</th></tr></thead>
+              <tbody>
+                <tr><td>标准版</td><td>通用礼赠、会员回馈和活动奖品。</td><td>面额、卡面、发行量、有效期和使用范围。</td></tr>
+                <tr><td>IP 联名版</td><td>结合后海汇原创 IP 设计主题礼品卡。</td><td>IP 授权、设计、发行量和使用规则。</td></tr>
+                <tr><td>企业定制版</td><td>用于企业员工福利和客户礼赠。</td><td>预算、采购、开票、定制数量和核销结算。</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">F</span><strong>试点效果｜共同关注的指标</strong><small>目标在试点前商定</small></summary>
+          <div class="appendix-body">
+            <p>双方可在试点前确定数据获取方式与观察目标，并定期回顾服务使用、体验和运营效果。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>指标</th><th>建议统计口径</th><th>频率 / 状态</th></tr></thead>
+              <tbody>
+                <tr><td>服务订单量</td><td>个人与企业客户已完成服务的车辆台次。</td><td>每周；目标待基线。</td></tr>
+                <tr><td>权益使用率</td><td>完成停车权益核销的用户数 ÷ 符合条件的停车用户数。</td><td>每周；需确认分母数据。</td></tr>
+                <tr><td>外观冲洗回场率</td><td>周末洗车后至下一周周三（含当日）的外观冲洗台次 ÷ 对应周末洗车台次。</td><td>每月；需按批次追踪。</td></tr>
+                <tr><td>履约准时率</td><td>约定时限内完成的订单 ÷ 有时限承诺的订单。</td><td>每周；先确定服务时限。</td></tr>
+                <tr><td>企业参与情况</td><td>了解服务、参与试点及持续使用的企业数量。</td><td>每月；统计范围由双方确定。</td></tr>
+                <tr><td>商家参与情况</td><td>参与联合活动的商家数，以及组合权益的领取和使用情况。</td><td>按活动回顾。</td></tr>
+                <tr><td>服务反馈</td><td>车主和企业对服务的评价、问题及处理结果。</td><td>每周；双方共同跟进。</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="code">G</span><strong>现场运营与协作规则</strong><small>启动前共同确认</small></summary>
+          <div class="appendix-body">
+            <p>车辆交接、安全保障、服务时效与物业配套，需要在试点启动前形成双方认可的执行规则。</p>
+            <div class="appendix-table-wrap"><table class="appendix-table">
+              <thead><tr><th>事项</th><th>建议安排</th><th>协作内容</th></tr></thead>
+              <tbody>
+                <tr><td>车辆交接</td><td>钥匙交接单、取还车影像留存；挪车前取得车主授权。</td><td>UCARS 门店运营 × 物业。</td></tr>
+                <tr><td>保险与安全</td><td>明确车辆移动、施工和场内作业的保障范围。</td><td>UCARS 确认保险及人员安排；物业确认场地规则。</td></tr>
+                <tr><td>服务时效</td><td>根据门店排班、场地条件和预约量确定完成时间与通知方式。</td><td>双方明确预约、超时告知和异常处理流程。</td></tr>
+                <tr><td>外观冲洗权益</td><td>周末洗车后，至下一周周三（含当日）可预约 1 次外观冲洗。</td><td>明确开放时段、服务范围、预约方式和核销规则。</td></tr>
+                <tr><td>物业资源</td><td>停车减免额度、停车场广告位（如道闸与 B1 柱面）、作业区域与企业触达入口。</td><td>后海汇 / 物业明确可提供的位置、数量、展示时长及审批流程。</td></tr>
+                <tr><td>活动场地</td><td>根据活动形式讨论大堂、户外街区或地面车位等场地。</td><td>双方提前确认场地、安全边界、车辆展示及活动审批安排。</td></tr>
+                <tr><td>企业对接</td><td>在试点准备阶段了解入驻企业的车辆类型和服务需求。</td><td>双方商定首批企业名单、对接方式和推进节奏。</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </details>
+        <p class="appendix-foot">本方案供 UCARS 与后海汇商议合作使用。具体产品、权益、价格与服务规则，以双方最终确认的内容为准。</p>
+      </div>
+    </section>
+  </main>
+  <div class="footer">UCARS × 后海汇 · 汽车生活服务共创方案</div>
+  <script>
+    if(new URLSearchParams(location.search).get('print')==='main')document.body.classList.add('print-main');
+    const slides=[...document.querySelectorAll('main > section')];
+    const links=[...document.querySelectorAll('.nav a')];
+    const progress=document.getElementById('progress');
+    const present=document.getElementById('present');
+    const observer=new IntersectionObserver(entries=>{
+      const current=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(!current)return;
+      const id=current.target.id;
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+      const index=slides.findIndex(s=>s.id===id);
+      progress.style.width=((index+1)/slides.length*100)+'%';
+    },{rootMargin:'-70px 0px -45% 0px',threshold:[0,.15,.35]});
+    slides.forEach(slide=>observer.observe(slide));
+    present.addEventListener('click',async()=>{
+      try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(e){}
+    });
+    document.querySelectorAll('.appendix-table').forEach(table=>{
+      const labels=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+      table.querySelectorAll('tbody tr').forEach(row=>{
+        [...row.children].forEach((cell,index)=>cell.dataset.label=labels[index]||'说明');
+      });
+    });
+    let previouslyOpen=[];
+    let printPrepared=false;
+    function preparePrint(){
+      if(printPrepared)return;
+      previouslyOpen=[...document.querySelectorAll('.appendix details[open]')];
+      document.querySelectorAll('.appendix details').forEach(item=>item.open=true);
+      printPrepared=true;
+    }
+    document.querySelectorAll('[data-print]').forEach(button=>button.addEventListener('click',()=>{
+      document.body.classList.toggle('print-main',button.dataset.print==='main');
+      preparePrint();
+      document.querySelector('.print-menu').open=false;
+      window.print();
+    }));
+    window.addEventListener('beforeprint',preparePrint);
+    window.addEventListener('afterprint',()=>{
+      document.querySelectorAll('.appendix details').forEach(item=>item.open=previouslyOpen.includes(item));
+      document.body.classList.remove('print-main');
+      printPrepared=false;
+    });
+    document.addEventListener('keydown',e=>{
+      if(['ArrowRight','ArrowDown','PageDown','ArrowLeft','ArrowUp','PageUp'].includes(e.key)&&!e.altKey&&!e.metaKey&&!e.ctrlKey){
+        const current=slides.reduce((best,slide,i)=>Math.abs(slide.getBoundingClientRect().top)<Math.abs(slides[best].getBoundingClientRect().top)?i:best,0);
+        const next=current+(['ArrowRight','ArrowDown','PageDown'].includes(e.key)?1:-1);
+        if(next>=0&&next<slides.length){e.preventDefault();slides[next].scrollIntoView({behavior:'auto'})}
+      }
+    });
+  </script>
+</body>
+</html>
